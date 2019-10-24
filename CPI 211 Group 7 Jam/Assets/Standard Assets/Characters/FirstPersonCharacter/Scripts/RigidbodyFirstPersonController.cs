@@ -139,7 +139,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void FixedUpdate()
         {
-            GroundCheck();
+            /*GroundCheck();
             Vector2 input = GetInput();
 
             if ((Mathf.Abs(input.x) > float.Epsilon || Mathf.Abs(input.y) > float.Epsilon) && (advancedSettings.airControl || m_IsGrounded))
@@ -156,9 +156,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 {
                     m_RigidBody.AddForce(desiredMove*SlopeMultiplier(), ForceMode.Impulse);
                 }
-            }
+            }*/
 
-            if (m_IsGrounded)
+            /*if (m_IsGrounded)
             {
                 m_RigidBody.drag = 5f;
 
@@ -183,18 +183,18 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     StickToGroundHelper();
                 }
             }
-            m_Jump = false;
+            m_Jump = false;*/
         }
 
 
-        private float SlopeMultiplier()
+        /*private float SlopeMultiplier()
         {
             float angle = Vector3.Angle(m_GroundContactNormal, Vector3.up);
             return movementSettings.SlopeCurveModifier.Evaluate(angle);
-        }
+        }*/
 
 
-        private void StickToGroundHelper()
+        /*private void StickToGroundHelper()
         {
             RaycastHit hitInfo;
             if (Physics.SphereCast(transform.position, m_Capsule.radius * (1.0f - advancedSettings.shellOffset), Vector3.down, out hitInfo,
@@ -206,10 +206,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     m_RigidBody.velocity = Vector3.ProjectOnPlane(m_RigidBody.velocity, hitInfo.normal);
                 }
             }
-        }
+        }*/
 
 
-        private Vector2 GetInput()
+        /*private Vector2 GetInput()
         {
             
             Vector2 input = new Vector2
@@ -219,7 +219,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 };
 			movementSettings.UpdateDesiredTargetSpeed(input);
             return input;
-        }
+        }*/
 
 
         private void RotateView()
@@ -241,7 +241,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         }
 
         /// sphere cast down just beyond the bottom of the capsule to see if the capsule is colliding round the bottom
-        private void GroundCheck()
+        /*private void GroundCheck()
         {
             m_PreviouslyGrounded = m_IsGrounded;
             RaycastHit hitInfo;
@@ -260,6 +260,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 m_Jumping = false;
             }
-        }
+        }*/
     }
 }
