@@ -4,16 +4,14 @@ using UnityEngine;
 
 public class advanceButton : MonoBehaviour
 {
-    public GameObject trigger;
 
-    private void Update()
+    void OnTriggerEnter(Collider other)
     {
-        
+        Debug.Log("Entered!");
     }
 
-    public void OnCollisionEnter(Collision collision)
+    void OnTriggerExit(Collider other)
     {
-        Instantiate(trigger);
-        Debug.Log("I'm Triggered!");
+        Debug.Log("Exited!");
     }
 }
