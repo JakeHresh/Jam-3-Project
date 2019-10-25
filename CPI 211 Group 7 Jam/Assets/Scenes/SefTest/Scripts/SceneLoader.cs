@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+    public sceneNav sceneNav;
     void Update()
     {
+        
         Victory();
         GameOver();
     }
@@ -21,7 +23,8 @@ public class SceneLoader : MonoBehaviour
 
     public void Victory()
     {
-        if (Input.GetKeyDown("v"))
+
+        if (Input.GetKeyDown("v") || sceneNav.waypoints.Length == 0)
         {
             SceneManager.LoadScene("VictoryScene", LoadSceneMode.Additive);
         }
