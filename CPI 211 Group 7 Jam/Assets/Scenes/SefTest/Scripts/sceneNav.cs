@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class sceneNav : MonoBehaviour
 {
+    public bool win = false;
     public bool toMove = true;
     public GameObject[] waypoints;
     public GameObject[] enemies;
@@ -26,19 +27,22 @@ public class sceneNav : MonoBehaviour
             //moves to each waypoint
             agent.SetDestination(waypoints[currentWaypoint].transform.position);
 
-            if (Vector3.Distance(waypoints[currentWaypoint].transform.position, transform.position) < 3.5)
+            if (Vector3.Distance(waypoints[currentWaypoint].transform.position, transform.position) < 2.0)
             {
                 currentWaypoint++;
                 toMove = false;
             }
 
-            //Destroys previous waypoint
-            Destroy(waypoints[currentWaypoint - 1]);
         }
 
         if (Input.GetKeyDown(KeyCode.Space) || enemies.Length == 0)
         {
             toMove = true;
+
+            if (currentWaypoint == waypoints.Length - 1)
+            {
+                win = true;
+            }
         }
     }
 
