@@ -117,6 +117,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
         }
 
+        //Additional Modification
+        public Transform mainCamera;
+        private float angle;
+        //
 
         private void Start()
         {
@@ -184,6 +188,22 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 }
             }
             m_Jump = false;
+            //Additional Modifications
+            if (!GameObject.FindWithTag("Player").GetComponent<RigidbodyFirstPersonController>().enabled)
+            {
+               // if (mainCamera.rotation.x > Mathf.Epsilon)
+                //{
+                    /*angle = mainCamera.rotation.x;
+                    angle -= .1f;*/
+                    mainCamera.rotation = Quaternion.Euler(0, 0, 0);
+               // }
+                //else if (mainCamera.rotation.x < Mathf.Epsilon)
+               // {
+                    /*angle = mainCamera.rotation.x;
+                    angle += .1f;*/
+                //    mainCamera.rotation = Quaternion.Euler(0, 0, 0);
+                //}
+            }
         }
 
 
@@ -259,6 +279,23 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (!m_PreviouslyGrounded && m_IsGrounded && m_Jumping)
             {
                 m_Jumping = false;
+            }
+        }
+
+        //Additional Modifications
+        private void OnTriggerStay(Collider other)
+        {
+            if (other.tag == "Waypoint")
+            {
+                GameObject.FindWithTag("Player").GetComponent<RigidbodyFirstPersonController>().enabled = true;
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.tag == "Waypoint")
+            {
+                GameObject.FindWithTag("Player").GetComponent<RigidbodyFirstPersonController>().enabled = false;
             }
         }
     }
