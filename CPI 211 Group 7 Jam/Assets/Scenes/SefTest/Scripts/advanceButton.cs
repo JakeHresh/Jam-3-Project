@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class advanceButton : MonoBehaviour
 {
+    public GameObject player;
+    public GameObject enemy;
+    public GameObject[] obj;
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Entered!");
-    }
+        for (int i = 0; i < obj.Length; i++)
+        {
+            Instantiate(enemy, obj[i].transform.position, Quaternion.LookRotation(player.transform.position - obj[i].transform.position, Vector3.up));
+        }
 
-    void OnTriggerExit(Collider other)
-    {
-        Debug.Log("Exited!");
+        Debug.Log("Entered!");
     }
 }
