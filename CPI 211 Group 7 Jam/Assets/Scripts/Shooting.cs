@@ -7,7 +7,7 @@ public class Shooting : MonoBehaviour
     public Camera playerCam;
     public float TargetDistance;
     public int bulletNumber = 5;
-    public float reloadTime = 3f;
+    public float reloadTime = 5f;
     private float reloadTimeReset;
     private int bulletReload;
     public AudioSource gunShot;

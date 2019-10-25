@@ -2030,7 +2030,7 @@ MonoBehaviour:
   playerCam: {fileID: 1205106923}
   TargetDistance: 100
   bulletNumber: 5
-  reloadTime: 3
+  reloadTime: 5
   gunShot: {fileID: 200945108}
   gunShotClip: {fileID: 8300000, guid: 82de3e92289ce85489f0db603945ba67, type: 3}
   reloadSound: {fileID: 944704500}
