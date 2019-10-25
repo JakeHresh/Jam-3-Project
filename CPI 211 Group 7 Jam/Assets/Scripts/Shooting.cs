@@ -10,6 +10,11 @@ public class Shooting : MonoBehaviour
     public float reloadTime = 3f;
     private float reloadTimeReset;
     private int bulletReload;
+    public AudioSource gunShot;
+    public AudioClip gunShotClip;
+    public AudioSource reloadSound;
+    public AudioClip reloadSoundClip;
+    private bool playedReload = false;
 
 
     // Start is called before the first frame update
@@ -17,6 +22,7 @@ public class Shooting : MonoBehaviour
     {
         bulletReload = bulletNumber;
         reloadTimeReset = reloadTime;
+        gunShot.clip = gunShotClip;
     }
 
     // Update is called once per frame
@@ -25,10 +31,17 @@ public class Shooting : MonoBehaviour
         if(bulletNumber > 0)
         {
             Clicked();
+            playedReload = false;
+            reloadSound.Stop();
         }
         else
         {
             reloadTime -= Time.deltaTime;
+            if(!playedReload)
+            {
+                reloadSound.Play();
+                playedReload = true;
+            }
             if(reloadTime <= Mathf.Epsilon)
             {
                 bulletNumber = bulletReload;
@@ -61,6 +74,7 @@ public class Shooting : MonoBehaviour
                 print("I'm looking at nothing!");
             }
             bulletNumber--;
+            gunShot.Play();
         }
 
     }
