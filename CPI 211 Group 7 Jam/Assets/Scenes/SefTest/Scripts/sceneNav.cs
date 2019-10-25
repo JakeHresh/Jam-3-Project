@@ -32,22 +32,39 @@ public class sceneNav : MonoBehaviour
                 currentWaypoint++;
                 toMove = false;
             }
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> f6126b19cd3991d864519d00dc3d3add186ebb78
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) || enemies.Length == 0)
+        if (Input.GetKeyDown(KeyCode.Space)) //|| enemies.Length == 0)
         {
             toMove = true;
+<<<<<<< HEAD
 
             if (currentWaypoint == waypoints.Length - 1)
             {
                 win = true;
             }
+=======
+            
+>>>>>>> f6126b19cd3991d864519d00dc3d3add186ebb78
         }
     }
 
     public void MoveNext()
     {
         toMove = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Waypoint")
+        {
+            //Destroys previous waypoint
+            Destroy(waypoints[currentWaypoint - 1]);
+        }
     }
 }
