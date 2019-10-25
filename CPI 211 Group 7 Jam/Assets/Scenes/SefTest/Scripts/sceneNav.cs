@@ -31,19 +31,27 @@ public class sceneNav : MonoBehaviour
                 currentWaypoint++;
                 toMove = false;
             }
-
-            //Destroys previous waypoint
-            Destroy(waypoints[currentWaypoint - 1]);
+            
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) || enemies.Length == 0)
+        if (Input.GetKeyDown(KeyCode.Space)) //|| enemies.Length == 0)
         {
             toMove = true;
+            
         }
     }
 
     public void MoveNext()
     {
         toMove = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Waypoint")
+        {
+            //Destroys previous waypoint
+            Destroy(waypoints[currentWaypoint - 1]);
+        }
     }
 }
