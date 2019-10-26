@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    public int count = 0;
-    public bool win1;
+    private int count = 0;
+    private bool win1;
+    private float lose1;
 
     void Update()
     {
+        lose1 = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthSystem>().health;
         win1 = GameObject.FindGameObjectWithTag("Player").GetComponent<sceneNav>().win;
         Victory();
         GameOver();
@@ -26,7 +28,7 @@ public class SceneLoader : MonoBehaviour
     public void Victory()
     {
 
-        if (Input.GetKeyDown("v") || win1 == true && count == 0)
+        if (win1 == true && count == 0)
         {
             SceneManager.LoadScene("VictoryScene", LoadSceneMode.Additive);
             count = 1;
@@ -35,9 +37,10 @@ public class SceneLoader : MonoBehaviour
 
     public void GameOver()
     {
-        if(Input.GetKeyDown("g"))
+        if(lose1 <= 0 && count == 0)
         {
             SceneManager.LoadScene("LoseScene", LoadSceneMode.Additive);
+            count = 1;
         }
     }
 }

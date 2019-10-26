@@ -9,7 +9,10 @@ public class sceneNav : MonoBehaviour
     public bool toMove = true;
     public GameObject[] waypoints;
     public GameObject[] enemies;
+    public GameObject text;
+    public GameObject canvas;
     int currentWaypoint = 0;
+    int count = 0;
 
     public NavMeshAgent agent;
 
@@ -22,7 +25,7 @@ public class sceneNav : MonoBehaviour
     {
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
-        if (waypoints.Length > 0 && toMove == true)
+        if (currentWaypoint < waypoints.Length && toMove == true)
         {
             //moves to each waypoint
             agent.SetDestination(waypoints[currentWaypoint].transform.position);
@@ -34,8 +37,16 @@ public class sceneNav : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) || enemies.Length == 0)
+        if(enemies.Length == 0 && toMove == false && count == 0)
         {
+            Instantiate(text, canvas.transform);
+            count = 1;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && enemies.Length == 0)
+        {
+            Destroy(text);
+            count = 0;
             toMove = true;
 
             if (currentWaypoint == waypoints.Length)
