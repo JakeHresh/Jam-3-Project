@@ -33,6 +33,7 @@ public class Shooting : MonoBehaviour
     {
         if(Time.timeScale == 1.0f)
         {
+            reloadSound.UnPause();
             if (bulletNumber > 0)
             {
                 Clicked();
@@ -58,6 +59,10 @@ public class Shooting : MonoBehaviour
             {
                 bulletNumber = -1;
             }
+        }
+        else
+        {
+            reloadSound.Pause();
         }
     }
 
