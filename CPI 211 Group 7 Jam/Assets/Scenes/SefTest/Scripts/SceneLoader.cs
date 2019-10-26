@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    private int count = 0;
+    public int count = 0;
+    private bool paused = false;
     private bool win1;
     private float lose1;
 
@@ -15,31 +16,37 @@ public class SceneLoader : MonoBehaviour
         win1 = GameObject.FindGameObjectWithTag("Player").GetComponent<sceneNav>().win;
         Victory();
         GameOver();
+        Menu();
     }
 
     public void Menu()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            Debug.Log("Menu will be here");
+            if(Time.timeScale > 0.0f)
+            {
+                Time.timeScale = 0.0f;
+                SceneManager.LoadScene("PauseScene", LoadSceneMode.Additive);
+            }
         }
     }
 
     public void Victory()
     {
-
         if (win1 == true && count == 0)
         {
             SceneManager.LoadScene("VictoryScene", LoadSceneMode.Additive);
+            Time.timeScale = 1.0f;
             count = 1;
         }
     }
 
     public void GameOver()
     {
-        if(lose1 <= 0 && count == 0)
+        if (lose1 <= 0 && count == 0)
         {
             SceneManager.LoadScene("LoseScene", LoadSceneMode.Additive);
+            Time.timeScale = 1.0f;
             count = 1;
         }
     }

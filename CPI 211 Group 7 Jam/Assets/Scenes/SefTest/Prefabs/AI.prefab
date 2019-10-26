@@ -98,6 +98,8 @@ GameObject:
   - component: {fileID: 1395772883605974534}
   - component: {fileID: 1395772883605974533}
   - component: {fileID: 1395772883605974543}
+  - component: {fileID: 5326507879235910047}
+  - component: {fileID: 1772443117739024108}
   m_Layer: 0
   m_Name: AI
   m_TagString: Untagged
@@ -214,12 +216,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dea275e6fc28f4643ba74b55ab549d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  win: 0
   toMove: 1
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  enemies: []
+  text: {fileID: 0}
+  canvas: {fileID: 0}
   agent: {fileID: 1395772883605974534}
 --- !u!54 &1395772883605974543
 Rigidbody:
@@ -237,3 +243,31 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5326507879235910047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395772883605974535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cc0d636f04102443966b1f5d8c8bd63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 0}
+--- !u!114 &1772443117739024108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395772883605974535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7fcb606410192f4e875808460448bac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 0
+  health: 0
+  self: {fileID: 0}

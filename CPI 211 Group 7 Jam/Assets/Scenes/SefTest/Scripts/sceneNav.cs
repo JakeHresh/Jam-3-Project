@@ -18,7 +18,7 @@ public class sceneNav : MonoBehaviour
 
     private void Start()
     {
-
+        text.SetActive(false);
     }
 
     private void Update()
@@ -37,28 +37,27 @@ public class sceneNav : MonoBehaviour
             }
         }
 
-        if(enemies.Length == 0 && toMove == false && count == 0)
+        if (enemies.Length == 0 && toMove == false && count == 0)
         {
-            Instantiate(text, canvas.transform);
-            count = 1;
+            if(currentWaypoint < waypoints.Length)
+            {
+                text.SetActive(true);
+                count = 1;
+            }
+            
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && enemies.Length == 0)
         {
-            Destroy(text);
+            transform.GetComponent<AudioSource>().Play();
+            text.SetActive(false);
             count = 0;
             toMove = true;
-
-            if (currentWaypoint == waypoints.Length)
-            {
-                win = true;
-            }
-
         }
-    }
 
-    public void MoveNext()
-    {
-        toMove = true;
+        if (currentWaypoint == waypoints.Length && enemies.Length == 0)
+        {
+            win = true;
+        }
     }
 }
