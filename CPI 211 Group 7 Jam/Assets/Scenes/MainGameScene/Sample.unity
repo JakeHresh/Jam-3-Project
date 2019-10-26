@@ -2226,6 +2226,7 @@ MonoBehaviour:
   gunShotClip: {fileID: 8300000, guid: 82de3e92289ce85489f0db603945ba67, type: 3}
   reloadSound: {fileID: 944704500}
   reloadSoundClip: {fileID: 8300000, guid: e0795a931f28f0d4699f1e966992df4d, type: 3}
+  shootTime: 10
 --- !u!114 &312852310
 MonoBehaviour:
   m_ObjectHideFlags: 0

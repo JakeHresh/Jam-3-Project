@@ -17,7 +17,7 @@ public class shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(shotCount.bulletNumber > 0)
+        if(shotCount.bulletNumber >= 0)
         {
             if (Input.GetMouseButtonDown(0)) //&& !toggle)
             {

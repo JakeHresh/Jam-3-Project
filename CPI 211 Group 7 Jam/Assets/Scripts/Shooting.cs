@@ -15,6 +15,8 @@ public class Shooting : MonoBehaviour
     public AudioSource reloadSound;
     public AudioClip reloadSoundClip;
     private bool playedReload = false;
+    public float shootTime = 10f;
+    private float shootTimeReset;
 
 
     // Start is called before the first frame update
@@ -23,6 +25,7 @@ public class Shooting : MonoBehaviour
         bulletReload = bulletNumber;
         reloadTimeReset = reloadTime;
         gunShot.clip = gunShotClip;
+        shootTimeReset = shootTime;
     }
 
     // Update is called once per frame
@@ -38,6 +41,7 @@ public class Shooting : MonoBehaviour
             }
             else
             {
+                bulletNumber = -1;
                 reloadTime -= Time.deltaTime;
                 if (!playedReload)
                 {
@@ -52,7 +56,7 @@ public class Shooting : MonoBehaviour
             }
             if (bulletNumber < bulletReload && Input.GetKeyDown("r"))
             {
-                bulletNumber = 0;
+                bulletNumber = -1;
             }
         }
     }

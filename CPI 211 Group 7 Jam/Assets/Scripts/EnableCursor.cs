@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveText : MonoBehaviour
+public class EnableCursor : MonoBehaviour
 {
-    public Transform text;
-    public float scrollSpeed = 1.5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +13,10 @@ public class MoveText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.transform.position += new Vector3(0f, scrollSpeed, 0f);
+        if(Cursor.lockState == CursorLockMode.Locked)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
 }
