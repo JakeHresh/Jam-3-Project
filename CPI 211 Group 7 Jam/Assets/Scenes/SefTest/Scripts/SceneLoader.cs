@@ -5,10 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    public sceneNav sceneNav;
+    public int count = 0;
+    public bool win1;
 
     void Update()
     {
+        win1 = GameObject.FindGameObjectWithTag("Player").GetComponent<sceneNav>().win;
         Victory();
         GameOver();
     }
@@ -24,9 +26,10 @@ public class SceneLoader : MonoBehaviour
     public void Victory()
     {
 
-        if (Input.GetKeyDown("v") || sceneNav.win == true)
+        if (Input.GetKeyDown("v") || win1 == true && count == 0)
         {
             SceneManager.LoadScene("VictoryScene", LoadSceneMode.Additive);
+            count = 1;
         }
     }
 

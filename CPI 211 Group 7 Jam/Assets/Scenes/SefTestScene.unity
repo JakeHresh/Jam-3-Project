@@ -1315,7 +1315,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d34ebc22ea94b64fa9baecd1c087f33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneNav: {fileID: 0}
+  count: 0
+  win1: 0
 --- !u!4 &1453778383
 Transform:
   m_ObjectHideFlags: 0
@@ -1889,6 +1890,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AI
+      objectReference: {fileID: 0}
+    - target: {fileID: 1395772883605974535, guid: c3b96c32dc76c6f4182af700a79c209e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1395772883605974537, guid: c3b96c32dc76c6f4182af700a79c209e,
         type: 3}
