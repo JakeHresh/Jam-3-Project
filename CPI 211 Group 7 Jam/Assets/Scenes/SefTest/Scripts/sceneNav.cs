@@ -7,10 +7,10 @@ public class sceneNav : MonoBehaviour
 {
     public bool win = false;
     public bool toMove = true;
-    public GameObject[] waypoints;
-    public GameObject[] enemies;
+    public GameObject[] waypoints, enemies;
     public GameObject text;
     public GameObject canvas;
+    public AudioClip firstAudioClip, secondAudioClip;
     int currentWaypoint = 0;
     int count = 0;
 
@@ -43,13 +43,14 @@ public class sceneNav : MonoBehaviour
             {
                 text.SetActive(true);
                 count = 1;
+                transform.GetComponent<AudioSource>().PlayOneShot(firstAudioClip);
             }
             
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && enemies.Length == 0)
         {
-            transform.GetComponent<AudioSource>().Play();
+            transform.GetComponent<AudioSource>().PlayOneShot(secondAudioClip);
             text.SetActive(false);
             count = 0;
             toMove = true;
