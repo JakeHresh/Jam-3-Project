@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("SefTestScene");
+        SceneManager.LoadScene("MainGameScene");
         Time.timeScale = 1.0f;
     }
 

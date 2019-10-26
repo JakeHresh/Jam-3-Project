@@ -36,7 +36,7 @@ public class SceneLoader : MonoBehaviour
         if (win1 == true && count == 0)
         {
             SceneManager.LoadScene("VictoryScene", LoadSceneMode.Additive);
-            Time.timeScale = 1.0f;
+            Time.timeScale = 0.0f;
             count = 1;
         }
     }
@@ -46,7 +46,7 @@ public class SceneLoader : MonoBehaviour
         if (lose1 <= 0 && count == 0)
         {
             SceneManager.LoadScene("LoseScene", LoadSceneMode.Additive);
-            Time.timeScale = 1.0f;
+            Time.timeScale = 0.0f;
             count = 1;
         }
     }
