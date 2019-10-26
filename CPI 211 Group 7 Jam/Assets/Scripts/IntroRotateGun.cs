@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class IntroRotateGun : MonoBehaviour
 {
+    public Transform gun;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +14,6 @@ public class IntroRotateGun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        gun.transform.Rotate(0f, 0.5f, 0f);
     }
 }
