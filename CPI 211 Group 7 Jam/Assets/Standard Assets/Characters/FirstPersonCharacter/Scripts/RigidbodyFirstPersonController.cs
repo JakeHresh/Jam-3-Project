@@ -138,6 +138,19 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 m_Jump = true;
             }
+            //Modifications
+            if(Input.GetKeyDown(KeyCode.Escape))
+            {
+                GameObject.FindWithTag("Player").GetComponent<RigidbodyFirstPersonController>().enabled = false;
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                Debug.Log("Disabled");
+            }
+            if(Time.timeScale == 1.0f)
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+            }
         }
 
 

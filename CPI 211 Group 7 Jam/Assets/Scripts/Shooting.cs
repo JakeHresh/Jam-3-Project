@@ -28,29 +28,32 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(bulletNumber > 0)
+        if(Time.timeScale == 1.0f)
         {
-            Clicked();
-            playedReload = false;
-            reloadSound.Stop();
-        }
-        else
-        {
-            reloadTime -= Time.deltaTime;
-            if(!playedReload)
+            if (bulletNumber > 0)
             {
-                reloadSound.Play();
-                playedReload = true;
+                Clicked();
+                playedReload = false;
+                reloadSound.Stop();
             }
-            if(reloadTime <= Mathf.Epsilon)
+            else
             {
-                bulletNumber = bulletReload;
-                reloadTime = reloadTimeReset;
+                reloadTime -= Time.deltaTime;
+                if (!playedReload)
+                {
+                    reloadSound.Play();
+                    playedReload = true;
+                }
+                if (reloadTime <= Mathf.Epsilon)
+                {
+                    bulletNumber = bulletReload;
+                    reloadTime = reloadTimeReset;
+                }
             }
-        }
-        if (bulletNumber < bulletReload && Input.GetKeyDown("r"))
-        {
-            bulletNumber = 0;
+            if (bulletNumber < bulletReload && Input.GetKeyDown("r"))
+            {
+                bulletNumber = 0;
+            }
         }
     }
 
