@@ -7,25 +7,26 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("MainGameScene");
         Time.timeScale = 1.0f;
+        SceneManager.LoadScene("Sample");
+        
     }
 
     public void Options()
     {
-        SceneManager.LoadScene("OptionScene");
         Time.timeScale = 1.0f;
+        SceneManager.LoadScene("OptionScene");
     }
     public void Return()
     {
-        SceneManager.LoadScene("StartScene");
         Time.timeScale = 1.0f;
+        SceneManager.LoadScene("StartScene");
     }
 
     public void Resume()
     {
-        SceneManager.UnloadSceneAsync("PauseScene");
         Time.timeScale = 1.0f;
+        SceneManager.UnloadSceneAsync("PauseScene");
     }
 
     public void QuitGame()
