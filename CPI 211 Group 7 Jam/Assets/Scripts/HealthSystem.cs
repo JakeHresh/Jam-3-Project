@@ -12,7 +12,7 @@ public class HealthSystem : MonoBehaviour
         self = gameObject;
         if (gameObject.tag == "Player")
         {
-            MaxHealth = 100;
+           MaxHealth = 100;
         }
         else if (gameObject.tag == "Enemy")
         {
