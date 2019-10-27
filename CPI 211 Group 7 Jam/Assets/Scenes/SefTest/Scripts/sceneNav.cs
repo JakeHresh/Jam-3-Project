@@ -8,7 +8,7 @@ public class sceneNav : MonoBehaviour
     public bool win = false;
     public bool toMove = true;
     public GameObject[] waypoints, enemies;
-    public GameObject text;
+    public GameObject text1, text2;
     public GameObject canvas;
     public AudioClip firstAudioClip, secondAudioClip;
     int currentWaypoint = 0;
@@ -18,7 +18,8 @@ public class sceneNav : MonoBehaviour
 
     private void Start()
     {
-        text.SetActive(false);
+        text1.SetActive(false);
+        text2.SetActive(false);
     }
 
     private void Update()
@@ -41,7 +42,7 @@ public class sceneNav : MonoBehaviour
         {
             if(currentWaypoint < waypoints.Length)
             {
-                text.SetActive(true);
+                text1.SetActive(true);
                 count = 1;
                 transform.GetComponent<AudioSource>().PlayOneShot(firstAudioClip);
             }
@@ -51,9 +52,10 @@ public class sceneNav : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && enemies.Length == 0 && count == 1)
         {
             transform.GetComponent<AudioSource>().PlayOneShot(secondAudioClip);
-            text.SetActive(false);
+            text1.SetActive(false);
             count = 0;
             toMove = true;
+            text2.SetActive(true);
         }
 
         if (currentWaypoint == waypoints.Length && enemies.Length == 0)

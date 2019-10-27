@@ -80,6 +80,12 @@ public class Shooting : MonoBehaviour
                 Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
                 print("I'm looking at " + hit.transform.name);
                 TargetDistance = hit.distance;
+
+                //ADDED
+                if(hit.transform.tag == "Enemy")
+                {
+                    hit.transform.GetComponent<HealthSystem>().Damage(10f);
+                }
             }
             else
             {
