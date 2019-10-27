@@ -21,7 +21,6 @@ public class stopMusic : MonoBehaviour
     {
         if (SceneManager.sceneCount >= 2)
         {
-            Debug.Log(SceneManager.GetActiveScene().name + " is active!");
             for (int i = 0; i < sources.Length; i++)
             {
                 sources[i].volume = 0.0f;

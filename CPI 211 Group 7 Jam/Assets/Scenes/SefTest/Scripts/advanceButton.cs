@@ -4,17 +4,24 @@ using UnityEngine;
 
 public class advanceButton : MonoBehaviour
 {
-    public GameObject player;
+    private GameObject player;
     public GameObject enemy;
-    public GameObject[] obj;
-
+    public GameObject[] spawnPoints;
+    public bool spawned = false;
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
     void OnTriggerEnter(Collider other)
     {
-        for (int i = 0; i < obj.Length; i++)
-        {
-            Instantiate(enemy, obj[i].transform.position, Quaternion.LookRotation(player.transform.position - obj[i].transform.position, Vector3.up));
-        }
 
-        Debug.Log("Entered!");
+        if(other == player.GetComponent<CapsuleCollider>())
+        {
+            for (int i = 0; i < spawnPoints.Length; i++)
+            {
+                Instantiate(enemy, spawnPoints[i].transform.position, Quaternion.LookRotation(player.transform.position - spawnPoints[i].transform.position, Vector3.up));
+            }
+            
+        }
     }
 }
