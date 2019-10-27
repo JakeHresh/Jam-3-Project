@@ -26,14 +26,14 @@ public class Enemy : MonoBehaviour
         {
             anim.SetBool("Shoot", true);
         }
-        else
+        /*else
         {
             anim.SetBool("Shoot", false);
         }
         if(timeLeft <= -7f)
         {
             timeLeft = timeReset;
-        }
+        }*/
 
     }
 

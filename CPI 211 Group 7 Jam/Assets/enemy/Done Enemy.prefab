@@ -2452,7 +2452,8 @@ MonoBehaviour:
   shotsPerSeconds: 1
   player: {fileID: 0}
   bulletSpeed: 300
-  shotDelay: 0
+  enemyBehavior: {fileID: 0}
+  shotDelay: 3
 --- !u!1 &8717364009653807598
 GameObject:
   m_ObjectHideFlags: 0
