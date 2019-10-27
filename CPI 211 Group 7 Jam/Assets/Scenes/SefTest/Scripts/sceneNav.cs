@@ -48,7 +48,7 @@ public class sceneNav : MonoBehaviour
             
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && enemies.Length == 0)
+        if (Input.GetKeyDown(KeyCode.Space) && enemies.Length == 0 && count == 1)
         {
             transform.GetComponent<AudioSource>().PlayOneShot(secondAudioClip);
             text.SetActive(false);
