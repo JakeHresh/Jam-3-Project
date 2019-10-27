@@ -10,10 +10,10 @@ public class AIShooting : MonoBehaviour
     public float shotsPerSeconds;
     public Transform player;
     public float bulletSpeed = 100;
+    public Enemy enemyBehavior;
+    private bool canShoot = true;
 
-
-
-    public float shotDelay;
+    public float shotDelay = 100;
     private float shotCounter;
 
     // Use this for initialization
@@ -21,6 +21,8 @@ public class AIShooting : MonoBehaviour
     {
         //bulletPoint = GetComponent<Transform>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        enemyBehavior = GetComponent<Enemy>();
+        shotCounter = shotDelay;
     }
     // Update is called once per frame
     void Update()
@@ -29,9 +31,17 @@ public class AIShooting : MonoBehaviour
         var rotation = Quaternion.LookRotation(player.position - transform.position);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 10);
         float probability = Time.deltaTime * shotsPerSeconds;
-        if (Random.value < probability)
+        if (enemyBehavior.anim.GetBool("IsShooting"))
         {
-            Fire();
+            shotDelay--;
+            if(shotDelay % 50 == 0)
+            {
+                Fire();
+            }
+        }
+        if(!enemyBehavior.anim.GetBool("IsShooting"))
+        {
+            shotDelay = shotCounter;
         }
     }
     void Fire()
