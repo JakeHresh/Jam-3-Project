@@ -12,6 +12,12 @@ public class MainMenu : MonoBehaviour
         
     }
 
+    public void Intro()
+    {
+        Time.timeScale = 1.0f;
+        SceneManager.LoadScene("IntroScene");
+    }
+
     public void Options()
     {
         Time.timeScale = 1.0f;

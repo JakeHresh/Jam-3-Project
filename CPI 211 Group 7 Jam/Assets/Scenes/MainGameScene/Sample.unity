@@ -1325,6 +1325,7 @@ GameObject:
   m_Component:
   - component: {fileID: 200945109}
   - component: {fileID: 200945108}
+  - component: {fileID: 200945110}
   m_Layer: 0
   m_Name: GunShot
   m_TagString: Untagged
@@ -1442,6 +1443,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &200945110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200945107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e46ac2ef72fd1394e912a0878d66b79e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sources:
+  - {fileID: 200945108}
+  volumes:
+  - 0
 --- !u!1001 &208151663
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2329,6 +2346,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: 0
+  currentTime: 0
+  endTime: 60
 --- !u!82 &312852318
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7156,6 +7175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 944704501}
   - component: {fileID: 944704500}
+  - component: {fileID: 944704502}
   m_Layer: 0
   m_Name: ReloadSound
   m_TagString: Untagged
@@ -7273,6 +7293,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &944704502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944704499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e46ac2ef72fd1394e912a0878d66b79e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sources:
+  - {fileID: 944704500}
+  volumes:
+  - 0
 --- !u!1001 &949046795
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7570,6 +7606,7 @@ GameObject:
   m_Component:
   - component: {fileID: 991161572}
   - component: {fileID: 991161571}
+  - component: {fileID: 991161573}
   m_Layer: 0
   m_Name: MainGameMusic
   m_TagString: Untagged
@@ -7687,6 +7724,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &991161573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991161570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e46ac2ef72fd1394e912a0878d66b79e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sources:
+  - {fileID: 991161571}
+  volumes:
+  - 0
 --- !u!1 &1015533974 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7753474226658537206, guid: ac638a8d9733a064090a2495cb80e413,
