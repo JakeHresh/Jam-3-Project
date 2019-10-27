@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Shield : MonoBehaviour
-{
-    private bool toggle = false;
+{    private bool toggle = false;
     public Animator anim;
     // Start is called before the first frame update
     void Start()
