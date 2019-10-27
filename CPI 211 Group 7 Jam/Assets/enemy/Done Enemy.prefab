@@ -2311,6 +2311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   anim: {fileID: 0}
+  timeLeft: 1
 --- !u!114 &678733851797661098
 MonoBehaviour:
   m_ObjectHideFlags: 0

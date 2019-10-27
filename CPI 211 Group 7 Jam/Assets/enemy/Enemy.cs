@@ -6,11 +6,14 @@ public class Enemy : MonoBehaviour
 {
     public GameObject Player;
     public Animator anim;
-    private float timeLeft = 10;
+    public float timeLeft = 1f;
+    private float timeReset;
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
+        Player = GameObject.FindGameObjectWithTag("Player");
+        timeReset = timeLeft;
     }
 
     // Update is called once per frame
@@ -21,13 +24,16 @@ public class Enemy : MonoBehaviour
         timeLeft -= Time.deltaTime;
         if (timeLeft < 0)
         {
-            anim.SetBool("Shoot", true);
+            anim.SetBool("shoot", true);
         }
         else
         {
-            anim.SetBool("Shoot", false);
+            anim.SetBool("shoot", false);
         }
-
+        if(timeLeft <= -7f)
+        {
+            timeLeft = timeReset;
+        }
 
     }
 
