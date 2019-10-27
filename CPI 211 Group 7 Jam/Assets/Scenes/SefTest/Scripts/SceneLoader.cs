@@ -9,14 +9,47 @@ public class SceneLoader : MonoBehaviour
     private bool paused = false;
     private bool win1;
     private float lose1;
+    public float currentTime, endTime = 60f;
 
     void Update()
     {
-        lose1 = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthSystem>().health;
-        win1 = GameObject.FindGameObjectWithTag("Player").GetComponent<sceneNav>().win;
-        Victory();
-        GameOver();
+        if(SceneManager.GetActiveScene().name == "Sample")
+        {
+            lose1 = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthSystem>().health;
+            win1 = GameObject.FindGameObjectWithTag("Player").GetComponent<sceneNav>().win;
+            Victory();
+            GameOver();
+        }
+
         Menu();
+        CheckIntro();
+    }
+
+    public void CheckIntro()
+    {
+        if(SceneManager.GetActiveScene().name == "IntroScene")
+        {
+            if(count == 0)
+            {
+                currentTime = 0f;
+                count = 1;
+            }
+
+            else
+            {
+                if(currentTime >= endTime)
+                {
+                    SceneManager.LoadScene("Sample");
+                    count = 0;
+                }
+
+                else
+                {
+                    currentTime += 1 * Time.deltaTime;
+                }
+            }
+           
+        }
     }
 
     public void Menu()
