@@ -24,11 +24,11 @@ public class Enemy : MonoBehaviour
         timeLeft -= Time.deltaTime;
         if (timeLeft < 0)
         {
-            anim.SetBool("shoot", true);
+            anim.SetBool("Shoot", true);
         }
         else
         {
-            anim.SetBool("shoot", false);
+            anim.SetBool("Shoot", false);
         }
         if(timeLeft <= -7f)
         {

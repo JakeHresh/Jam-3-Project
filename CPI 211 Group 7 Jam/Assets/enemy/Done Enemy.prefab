@@ -2420,7 +2420,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 0
   health: 0
-  self: {fileID: 0}
+  self: {fileID: 8529051042054148032}
+  explosion: {fileID: 131164, guid: 3c5f4e32698bdb04eaed647f60310510, type: 3}
 --- !u!65 &8430635734191453809
 BoxCollider:
   m_ObjectHideFlags: 0

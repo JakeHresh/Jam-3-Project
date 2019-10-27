@@ -6,6 +6,7 @@ public class HealthSystem : MonoBehaviour
 {
     public float MaxHealth, health;
     public GameObject self;
+    public GameObject explosion;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +44,7 @@ public class HealthSystem : MonoBehaviour
             if(gameObject.tag == "Enemy")
             {
                 Destroy(self, 2f * Time.deltaTime);
+                Instantiate(explosion, self.transform.position, self.transform.rotation);
             }
         }
     }
