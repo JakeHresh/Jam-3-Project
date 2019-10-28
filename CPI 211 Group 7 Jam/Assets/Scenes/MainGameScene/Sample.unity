@@ -2894,7 +2894,7 @@ MonoBehaviour:
   MaxHealth: 0
   health: 0
   self: {fileID: 312852308}
-  explosion: {fileID: 0}
+  explosion: {fileID: 131164, guid: 3c5f4e32698bdb04eaed647f60310510, type: 3}
 --- !u!114 &312852317
 MonoBehaviour:
   m_ObjectHideFlags: 0
