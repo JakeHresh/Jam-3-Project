@@ -21,9 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/PauseScene.unity
     guid: 09150ef0556fd4c45bb920954eafea9f
   - enabled: 1
-    path: Assets/Scenes/VictoryScene.unity
-    guid: e93c8e172c01c02498e1d0e7bf7ee4b2
-  - enabled: 1
     path: Assets/Scenes/LoseScene.unity
     guid: 4bf81b1b26c88cc438c78c48e04dc8f4
+  - enabled: 1
+    path: Assets/Scenes/VictoryScene.unity
+    guid: e93c8e172c01c02498e1d0e7bf7ee4b2
   m_configObjects: {}
