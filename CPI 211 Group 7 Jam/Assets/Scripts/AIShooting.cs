@@ -13,6 +13,8 @@ public class AIShooting : MonoBehaviour
     public Enemy enemyBehavior;
     private bool canShoot = true;
 
+    private AudioSource gunSource;
+
     public float shotDelay = 100;
     private float shotCounter;
 
@@ -23,6 +25,7 @@ public class AIShooting : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         enemyBehavior = GetComponent<Enemy>();
         shotCounter = shotDelay;
+        gunSource = GetComponent<AudioSource>();
     }
     // Update is called once per frame
     void Update()
@@ -49,7 +52,7 @@ public class AIShooting : MonoBehaviour
 
         GameObject instBullet =  Instantiate(bullet, bulletPoint.position, bulletPoint.rotation) as GameObject;
         instBullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed);
-       
+        gunSource.Play();
 
 
     }
