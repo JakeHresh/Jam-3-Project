@@ -345,7 +345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   count: 0
   currentTime: 0
-  endTime: 60
+  endTime: 52
 --- !u!1 &219386891
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,7 +441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 310280519}
-  scrollSpeed: 1.2
+  scrollSpeed: 1.1
 --- !u!1 &319269539
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,7 +476,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 468.1, y: -2221}
+  m_AnchoredPosition: {x: 468.1, y: -1911}
   m_SizeDelta: {x: 434.52, y: 3015.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &319269541
