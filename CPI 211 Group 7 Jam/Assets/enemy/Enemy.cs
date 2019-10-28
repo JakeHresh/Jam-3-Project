@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
         anim = GetComponent<Animator>();
         Player = GameObject.FindGameObjectWithTag("Player");
         timeReset = timeLeft;
+        timeLeft = Random.Range(-10.0f, 10.0f);
     }
 
     // Update is called once per frame

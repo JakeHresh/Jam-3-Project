@@ -31,20 +31,23 @@ public class AIShooting : MonoBehaviour
     void Update()
     {
         //transform.LookAt(player.transform.rotation * Vector3.left, player.transform.rotation * Vector3.up);
-        var rotation = Quaternion.LookRotation(player.position - transform.position);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 10);
-        float probability = Time.deltaTime * shotsPerSeconds;
-        if (enemyBehavior.anim.GetBool("IsShooting"))
+        if(Time.timeScale == 1)
         {
-            shotDelay--;
-            if(shotDelay % 50 == 0)
+            var rotation = Quaternion.LookRotation(player.position - transform.position);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 10);
+            float probability = Time.deltaTime * shotsPerSeconds;
+            if (enemyBehavior.anim.GetBool("IsShooting"))
             {
-                Fire();
+                shotDelay--;
+                if (shotDelay % 50 == 0)
+                {
+                    Fire();
+                }
             }
-        }
-        if(!enemyBehavior.anim.GetBool("IsShooting"))
-        {
-            shotDelay = shotCounter;
+            if (!enemyBehavior.anim.GetBool("IsShooting"))
+            {
+                shotDelay = shotCounter;
+            }
         }
     }
     void Fire()
